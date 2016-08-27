@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Sale.master.cs" Inherits="Sales_Sale" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../Contents/Style/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Contents/Style/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Contents/Plugins/Simple-Date-Picker-for-Bootstrap/css/datepicker.css" rel="stylesheet" />
+    <script src="../Contents/Script/jquery.min.js"></script>
+    <script src="../Contents/Script/bootstrap.min.js"></script>
+    <script src="../Contents/Plugins/Simple-Date-Picker-for-Bootstrap/js/bootstrap-datepicker.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Sales Management</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li id="liDashboard" runat="server" class="active"><a href="Dashboard.aspx">Dashboard</a></li>
+                    <li id="liReports" runat="server" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reports<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="DailySaleReport.aspx">Daily Report</a></li>
+                            <li><a href="WeeklySaleReport.aspx">Weekly Report</a></li>
+                            <li><a href="MonthlySaleReport.aspx">Monthly Report</a></li>
+                        </ul>
+                    </li>
+                    <li id="liProfile" runat="server"><a href="Profile.aspx">Profile</a></li>
+                    <li id="liPOS" runat="server"><a href="PointOfSale.aspx">POS</a></li>
+                    <li id="liInventory" runat="server"><a href="Inventory.aspx">Inventry</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span><%=AppSession.Name%></a></li>
+                    <li><a href="../Logout.aspx"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="Body" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
